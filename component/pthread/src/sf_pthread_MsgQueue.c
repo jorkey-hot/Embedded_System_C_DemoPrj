@@ -53,7 +53,7 @@ int sf_pthread_node_free(SF_MSG_QUEUE_NODE_T *p_node,SF_PTHREAD_T *thread)
 {
     if (p_node == NULL)
     {
-        LOG_ERR("Node free fail,parameter is invalid!\t\n");
+        LOG_ERROR("Node free fail,parameter is invalid!\t\n");
         return -1;
     }
     p_node->prev=NULL;
