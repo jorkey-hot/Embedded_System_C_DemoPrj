@@ -49,7 +49,7 @@ SF_MSG_QUEUE_NODE_T *sf_pthread_node_alloc(SF_PTHREAD_T *thread)
 /*****
  * @brief 链表节点归还
  */
-int sf_pthread_node_free(SF_MSG_QUEUE_NODE_T *p_node)
+int sf_pthread_node_free(SF_MSG_QUEUE_NODE_T *p_node,SF_PTHREAD_T *thread)
 {
     if (p_node == NULL)
     {
@@ -76,7 +76,7 @@ int sf_pthread_MsgQueueInit(SF_PTHREAD_T *thread)
         return -1;
     }
     // 初始化线程池
-    thread->thread_MsgQueue.sf_msg_queue_head == NULL; /* 初始化时头节点指向空 */
+    // thread->thread_MsgQueue.sf_msg_queue_head == NULL; /* 初始化时头节点指向空 */
 #ifdef SF_LINUX // 使用Linux操作系统
     if (pthread_mutex_init(&thread->thread_MsgQueue.mutex, NULL) != 0)
     {
